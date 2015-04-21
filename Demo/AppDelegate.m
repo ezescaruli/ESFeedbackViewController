@@ -21,8 +21,6 @@
     [ESFeedbackViewController setNumberOfLaunchesToShow:3];
     [ESFeedbackViewController registerAppLaunch];
     
-    [ESFeedbackViewController showIfNecessary];
-    
     return YES;
 }
 
