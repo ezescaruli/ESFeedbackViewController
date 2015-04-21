@@ -15,8 +15,8 @@
 #import "PCDFeedbackViewController+Keyboard.h"
 
 
-static NSString *const ESFeedbackAppLaunchCountKey = @"PCDFeedbackAppLaunchCount";
-static NSString *const PCDFeedbackWasShown = @"PCDFeedbackWasShown";
+static NSString *const ESFeedbackAppLaunchCountKey = @"ESFeedbackAppLaunchCount";
+static NSString *const ESFeedbackWasShownKey = @"ESFeedbackWasShown";
 
 static NSInteger PCDFeedbackNumberOfLaunchesToShow = 0;
 static UIFont *PCDFeedbackTextFont;
@@ -77,7 +77,7 @@ static ESFeedbackViewController *currentInstance;
         [vc showInView:window];
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setBool:YES forKey:PCDFeedbackWasShown];
+        [userDefaults setBool:YES forKey:ESFeedbackWasShownKey];
         [userDefaults synchronize];
     }
 }
@@ -166,7 +166,7 @@ static ESFeedbackViewController *currentInstance;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     NSInteger launchCount = [userDefaults integerForKey:ESFeedbackAppLaunchCountKey];
-    BOOL wasShown = [userDefaults boolForKey:PCDFeedbackWasShown];
+    BOOL wasShown = [userDefaults boolForKey:ESFeedbackWasShownKey];
     
     return launchCount >= PCDFeedbackNumberOfLaunchesToShow && !wasShown;
 }

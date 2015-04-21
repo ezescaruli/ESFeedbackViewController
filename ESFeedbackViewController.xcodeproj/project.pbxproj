@@ -17,6 +17,8 @@
 		F0DB1ED01AE5D2550079B81E /* ESFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1ECF1AE5D2550079B81E /* ESFeedbackViewController.m */; };
 		F0DB1ED41AE5D46B0079B81E /* ESFeedbackPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1ED31AE5D46B0079B81E /* ESFeedbackPromptViewController.m */; };
 		F0DB1ED81AE5D6900079B81E /* ESFeedbackNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1ED71AE5D6900079B81E /* ESFeedbackNavigationController.m */; };
+		F0DB1EDC1AE5D7EA0079B81E /* UIView+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EDB1AE5D7EA0079B81E /* UIView+Blur.m */; };
+		F0DB1EE11AE5D82C0079B81E /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EE01AE5D82C0079B81E /* UIImageEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		F0DB1ED31AE5D46B0079B81E /* ESFeedbackPromptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackPromptViewController.m; sourceTree = "<group>"; };
 		F0DB1ED61AE5D6900079B81E /* ESFeedbackNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFeedbackNavigationController.h; sourceTree = "<group>"; };
 		F0DB1ED71AE5D6900079B81E /* ESFeedbackNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackNavigationController.m; sourceTree = "<group>"; };
+		F0DB1EDA1AE5D7EA0079B81E /* UIView+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Blur.h"; sourceTree = "<group>"; };
+		F0DB1EDB1AE5D7EA0079B81E /* UIView+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Blur.m"; sourceTree = "<group>"; };
+		F0DB1EDF1AE5D82C0079B81E /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		F0DB1EE01AE5D82C0079B81E /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,8 @@
 			children = (
 				F0DB1ECC1AE5D2550079B81E /* Controllers */,
 				F0DB1EC91AE5D1770079B81E /* Storyboard */,
+				F0DB1ED91AE5D7EA0079B81E /* Categories */,
+				F0DB1EDD1AE5D82C0079B81E /* Helpers */,
 			);
 			path = ESFeedbackViewController;
 			sourceTree = "<group>";
@@ -135,6 +143,32 @@
 				F0DB1ED71AE5D6900079B81E /* ESFeedbackNavigationController.m */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F0DB1ED91AE5D7EA0079B81E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F0DB1EDA1AE5D7EA0079B81E /* UIView+Blur.h */,
+				F0DB1EDB1AE5D7EA0079B81E /* UIView+Blur.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		F0DB1EDD1AE5D82C0079B81E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F0DB1EDE1AE5D82C0079B81E /* UIImageEffects */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F0DB1EDE1AE5D82C0079B81E /* UIImageEffects */ = {
+			isa = PBXGroup;
+			children = (
+				F0DB1EDF1AE5D82C0079B81E /* UIImageEffects.h */,
+				F0DB1EE01AE5D82C0079B81E /* UIImageEffects.m */,
+			);
+			path = UIImageEffects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +246,10 @@
 				F0DB1ED01AE5D2550079B81E /* ESFeedbackViewController.m in Sources */,
 				F074D2E01AE4E69E0092D962 /* main.m in Sources */,
 				F074D2DB1AE4E69E0092D962 /* AppDelegate.m in Sources */,
+				F0DB1EE11AE5D82C0079B81E /* UIImageEffects.m in Sources */,
 				F0DB1ED81AE5D6900079B81E /* ESFeedbackNavigationController.m in Sources */,
 				F0DB1ED41AE5D46B0079B81E /* ESFeedbackPromptViewController.m in Sources */,
+				F0DB1EDC1AE5D7EA0079B81E /* UIView+Blur.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
