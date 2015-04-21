@@ -20,6 +20,7 @@
 		F0DB1EDC1AE5D7EA0079B81E /* UIView+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EDB1AE5D7EA0079B81E /* UIView+Blur.m */; };
 		F0DB1EE11AE5D82C0079B81E /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EE01AE5D82C0079B81E /* UIImageEffects.m */; };
 		F0DB1EE41AE5D9B20079B81E /* ESFeedbackViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EE31AE5D9B20079B81E /* ESFeedbackViewController+Navigation.m */; };
+		F0DB1EE81AE5DB130079B81E /* ESFeedbackFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EE71AE5DB130079B81E /* ESFeedbackFinishViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		F0DB1EE01AE5D82C0079B81E /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		F0DB1EE21AE5D9B20079B81E /* ESFeedbackViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ESFeedbackViewController+Navigation.h"; sourceTree = "<group>"; };
 		F0DB1EE31AE5D9B20079B81E /* ESFeedbackViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ESFeedbackViewController+Navigation.m"; sourceTree = "<group>"; };
+		F0DB1EE61AE5DB130079B81E /* ESFeedbackFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFeedbackFinishViewController.h; sourceTree = "<group>"; };
+		F0DB1EE71AE5DB130079B81E /* ESFeedbackFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackFinishViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 				F0DB1ECD1AE5D2550079B81E /* Main */,
 				F0DB1ED51AE5D6900079B81E /* Navigation */,
 				F0DB1ED11AE5D46B0079B81E /* Prompt */,
+				F0DB1EE51AE5DB130079B81E /* Finish */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +178,15 @@
 				F0DB1EE01AE5D82C0079B81E /* UIImageEffects.m */,
 			);
 			path = UIImageEffects;
+			sourceTree = "<group>";
+		};
+		F0DB1EE51AE5DB130079B81E /* Finish */ = {
+			isa = PBXGroup;
+			children = (
+				F0DB1EE61AE5DB130079B81E /* ESFeedbackFinishViewController.h */,
+				F0DB1EE71AE5DB130079B81E /* ESFeedbackFinishViewController.m */,
+			);
+			path = Finish;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +262,7 @@
 			files = (
 				F074D2E11AE4E69E0092D962 /* ViewController.m in Sources */,
 				F0DB1ED01AE5D2550079B81E /* ESFeedbackViewController.m in Sources */,
+				F0DB1EE81AE5DB130079B81E /* ESFeedbackFinishViewController.m in Sources */,
 				F074D2E01AE4E69E0092D962 /* main.m in Sources */,
 				F074D2DB1AE4E69E0092D962 /* AppDelegate.m in Sources */,
 				F0DB1EE11AE5D82C0079B81E /* UIImageEffects.m in Sources */,

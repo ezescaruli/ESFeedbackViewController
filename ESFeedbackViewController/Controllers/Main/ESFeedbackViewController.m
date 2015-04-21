@@ -18,7 +18,7 @@
 static NSString *const ESFeedbackAppLaunchCountKey = @"ESFeedbackAppLaunchCount";
 static NSString *const ESFeedbackWasShownKey = @"ESFeedbackWasShown";
 
-static NSInteger PCDFeedbackNumberOfLaunchesToShow = 0;
+static NSInteger ESFeedbackNumberOfLaunchesToShow = 0;
 static UIFont *PCDFeedbackTextFont;
 static UIFont *PCDFeedbackButtonsFont;
 static NSString *PCDFeedbackAppID;
@@ -61,7 +61,7 @@ static ESFeedbackViewController *currentInstance;
 
 
 + (void)setNumberOfLaunchesToShow:(NSInteger)numberOfLaunches {
-    PCDFeedbackNumberOfLaunchesToShow = numberOfLaunches;
+    ESFeedbackNumberOfLaunchesToShow = numberOfLaunches;
 }
 
 
@@ -168,7 +168,7 @@ static ESFeedbackViewController *currentInstance;
     NSInteger launchCount = [userDefaults integerForKey:ESFeedbackAppLaunchCountKey];
     BOOL wasShown = [userDefaults boolForKey:ESFeedbackWasShownKey];
     
-    return launchCount >= PCDFeedbackNumberOfLaunchesToShow && !wasShown;
+    return launchCount >= ESFeedbackNumberOfLaunchesToShow && !wasShown;
 }
 
 

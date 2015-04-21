@@ -6,7 +6,7 @@
 
 #import "ESFeedbackViewController+Navigation.h"
 #import "ESFeedbackNavigationController.h"
-#import "PCDFeedbackFinishViewController.h"
+#import "ESFeedbackFinishViewController.h"
 
 
 static CGFloat const ESFeedbackFinishPopupHeight = 44.0;
@@ -83,12 +83,12 @@ static CGFloat const ESFeedbackFinishPopupHeight = 44.0;
         hostViewController = ((UINavigationController *) hostViewController).topViewController;
     }
     
-    PCDFeedbackFinishViewController *finishVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Finish"];
+    ESFeedbackFinishViewController *finishVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Finish"];
     [self showFinishViewController:finishVC inHostViewController:hostViewController];
 }
 
 
-- (void)showFinishViewController:(PCDFeedbackFinishViewController *)finishVC inHostViewController:(UIViewController *)hostVC {
+- (void)showFinishViewController:(ESFeedbackFinishViewController *)finishVC inHostViewController:(UIViewController *)hostVC {
     [hostVC addChildViewController:finishVC];
     [hostVC.view addSubview:finishVC.view];
     
@@ -103,7 +103,7 @@ static CGFloat const ESFeedbackFinishPopupHeight = 44.0;
 }
 
 
-- (void)fadeInFinishViewController:(PCDFeedbackFinishViewController *)finishVC {
+- (void)fadeInFinishViewController:(ESFeedbackFinishViewController *)finishVC {
     finishVC.view.alpha = 0.0;
     
     [UIView animateWithDuration:0.5
@@ -117,7 +117,7 @@ static CGFloat const ESFeedbackFinishPopupHeight = 44.0;
 }
 
 
-- (void)fadeOutFinishViewController:(PCDFeedbackFinishViewController *)finishVC {
+- (void)fadeOutFinishViewController:(ESFeedbackFinishViewController *)finishVC {
     [UIView animateWithDuration:1.0
                      animations:^{
                          finishVC.view.alpha = 0.0;
