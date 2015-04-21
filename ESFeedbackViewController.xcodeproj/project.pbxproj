@@ -26,6 +26,7 @@
 		F0DB1EF31AE5E2710079B81E /* ESFeedbackEnjoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EF21AE5E2710079B81E /* ESFeedbackEnjoyViewController.m */; };
 		F0DB1EF61AE5E43D0079B81E /* ESFeedbackQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EF51AE5E43D0079B81E /* ESFeedbackQuestionViewController.m */; };
 		F0DB1EF91AE5E56D0079B81E /* ESFeedbackRatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EF81AE5E56D0079B81E /* ESFeedbackRatingViewController.m */; };
+		F0DB1EFC1AE5E9330079B81E /* ESFeedbackSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EFB1AE5E9330079B81E /* ESFeedbackSuggestionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		F0DB1EF51AE5E43D0079B81E /* ESFeedbackQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackQuestionViewController.m; sourceTree = "<group>"; };
 		F0DB1EF71AE5E56D0079B81E /* ESFeedbackRatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFeedbackRatingViewController.h; sourceTree = "<group>"; };
 		F0DB1EF81AE5E56D0079B81E /* ESFeedbackRatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackRatingViewController.m; sourceTree = "<group>"; };
+		F0DB1EFA1AE5E9330079B81E /* ESFeedbackSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFeedbackSuggestionViewController.h; sourceTree = "<group>"; };
+		F0DB1EFB1AE5E9330079B81E /* ESFeedbackSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackSuggestionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				F0DB1EF51AE5E43D0079B81E /* ESFeedbackQuestionViewController.m */,
 				F0DB1EF71AE5E56D0079B81E /* ESFeedbackRatingViewController.h */,
 				F0DB1EF81AE5E56D0079B81E /* ESFeedbackRatingViewController.m */,
+				F0DB1EFA1AE5E9330079B81E /* ESFeedbackSuggestionViewController.h */,
+				F0DB1EFB1AE5E9330079B81E /* ESFeedbackSuggestionViewController.m */,
 			);
 			path = Prompt;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				F074D2E11AE4E69E0092D962 /* ViewController.m in Sources */,
 				F0DB1EEE1AE5DD090079B81E /* UIColor+Hex.m in Sources */,
 				F0DB1ED01AE5D2550079B81E /* ESFeedbackViewController.m in Sources */,
+				F0DB1EFC1AE5E9330079B81E /* ESFeedbackSuggestionViewController.m in Sources */,
 				F0DB1EE81AE5DB130079B81E /* ESFeedbackFinishViewController.m in Sources */,
 				F074D2E01AE4E69E0092D962 /* main.m in Sources */,
 				F074D2DB1AE4E69E0092D962 /* AppDelegate.m in Sources */,
