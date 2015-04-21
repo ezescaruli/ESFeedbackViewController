@@ -7,7 +7,7 @@ ESFeedbackViewController
 * A review in the App Store.
 
 
-![Demo](./Readme/Feedback.gif =200x)
+<img src="./Readme/Feedback.gif" alt="Drawing" style="width: 200px;"/>
 
 
 ### Usage
