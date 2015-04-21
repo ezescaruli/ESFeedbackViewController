@@ -112,7 +112,7 @@
         <!--Feedback Navigation Controller-->
         <scene sceneID="56J-hn-JDt">
             <objects>
-                <navigationController storyboardIdentifier="PromptNavigationController" id="Y3Y-6g-M80" customClass="PCDFeedbackNavigationController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PromptNavigationController" id="Y3Y-6g-M80" customClass="ESFeedbackNavigationController" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

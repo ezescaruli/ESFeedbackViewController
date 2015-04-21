@@ -8,14 +8,14 @@
 
 #import "ESFeedbackViewController.h"
 #import "ESFeedbackPromptViewController.h"
-#import "PCDFeedbackNavigationController.h"
+#import "ESFeedbackNavigationController.h"
 
 #import "UIView+Blur.h"
 #import "PCDFeedbackViewController+Navigation.h"
 #import "PCDFeedbackViewController+Keyboard.h"
 
 
-static NSString *const PCDFeedbackAppLaunchCountKey = @"PCDFeedbackAppLaunchCount";
+static NSString *const ESFeedbackAppLaunchCountKey = @"PCDFeedbackAppLaunchCount";
 static NSString *const PCDFeedbackWasShown = @"PCDFeedbackWasShown";
 
 static NSInteger PCDFeedbackNumberOfLaunchesToShow = 0;
@@ -38,7 +38,7 @@ static ESFeedbackViewController *currentInstance;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *buttonsContainerHeightConstraint;
 
 @property (nonatomic, strong) UIView *blurView;
-@property (nonatomic, strong) PCDFeedbackNavigationController *feedbackNavigationController;
+@property (nonatomic, strong) ESFeedbackNavigationController *feedbackNavigationController;
 
 @end
 
@@ -52,10 +52,10 @@ static ESFeedbackViewController *currentInstance;
 + (void)registerAppLaunch {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    NSInteger launchCount = [userDefaults integerForKey:PCDFeedbackAppLaunchCountKey];
+    NSInteger launchCount = [userDefaults integerForKey:ESFeedbackAppLaunchCountKey];
     ++launchCount;
     
-    [userDefaults setInteger:launchCount forKey:PCDFeedbackAppLaunchCountKey];
+    [userDefaults setInteger:launchCount forKey:ESFeedbackAppLaunchCountKey];
     [userDefaults synchronize];
 }
 
@@ -165,7 +165,7 @@ static ESFeedbackViewController *currentInstance;
 + (BOOL)shouldShow {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    NSInteger launchCount = [userDefaults integerForKey:PCDFeedbackAppLaunchCountKey];
+    NSInteger launchCount = [userDefaults integerForKey:ESFeedbackAppLaunchCountKey];
     BOOL wasShown = [userDefaults boolForKey:PCDFeedbackWasShown];
     
     return launchCount >= PCDFeedbackNumberOfLaunchesToShow && !wasShown;
