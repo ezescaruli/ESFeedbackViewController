@@ -7,7 +7,7 @@ ESFeedbackViewController
 * A review in the App Store.
 
 
-![Informative Demo](./Readme/Feedback.gif)
+![Demo](./Readme/Feedback.gif =200x)
 
 
 ### Usage
