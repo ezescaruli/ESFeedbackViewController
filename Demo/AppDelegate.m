@@ -29,6 +29,9 @@
         }
     }];
     
+    // An example app id.
+    [ESFeedbackViewController setAppID:@"838883413"];
+    
     return YES;
 }
 

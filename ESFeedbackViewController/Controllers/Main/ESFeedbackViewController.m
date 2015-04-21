@@ -86,7 +86,7 @@ static ESFeedbackViewController *currentInstance;
 
 
 + (UIFont *)textFont {
-    return _textFont ?: [UIFont systemFontOfSize:13.0];
+    return _textFont ?: [UIFont systemFontOfSize:14.0];
 }
 
 
@@ -96,7 +96,7 @@ static ESFeedbackViewController *currentInstance;
 
 
 + (UIFont *)buttonsFont {
-    return _buttonsFont ?: [UIFont boldSystemFontOfSize:15.0];
+    return _buttonsFont ?: [UIFont boldSystemFontOfSize:14.0];
 }
 
 
