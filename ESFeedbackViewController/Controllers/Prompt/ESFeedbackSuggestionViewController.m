@@ -61,12 +61,16 @@ static NSString *const ESFeedbackSuggestionTextViewFeedback = @"Write here.";
 
 
 - (void)performCancelAction {
+    [super performCancelAction];
+    
     ESFeedbackNavigationController *navigationController = (ESFeedbackNavigationController *) self.navigationController;
     [navigationController finish];
 }
 
 
 - (void)performOKAction {
+    [super performOKAction];
+    
     ESFeedbackNavigationController *navigationController = (ESFeedbackNavigationController *) self.navigationController;
     [navigationController finish];
 }
@@ -78,6 +82,20 @@ static NSString *const ESFeedbackSuggestionTextViewFeedback = @"Write here.";
     }
     
     return 200.0;
+}
+
+
+#pragma mark - Getters / Setters
+
+
+- (NSString *)inputText {
+    NSString *text;
+    
+    if (![self.textView.text isEqualToString:ESFeedbackSuggestionTextViewFeedback]) {
+        text = [self.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    }
+    
+    return text;
 }
 
 

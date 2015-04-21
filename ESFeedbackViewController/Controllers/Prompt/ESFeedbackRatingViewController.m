@@ -50,12 +50,16 @@
 
 
 - (void)performCancelAction {
+    [super performCancelAction];
+    
     ESFeedbackNavigationController *navigationController = (ESFeedbackNavigationController *) self.navigationController;
     [navigationController finish];
 }
 
 
 - (void)performOKAction {
+    [super performOKAction];
+    
     ESFeedbackNavigationController *navigationController = (ESFeedbackNavigationController *) self.navigationController;
     [navigationController goToAppStore];
 }

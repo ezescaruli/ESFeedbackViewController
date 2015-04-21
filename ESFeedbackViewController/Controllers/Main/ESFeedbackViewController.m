@@ -16,13 +16,14 @@
 #import "ESFeedbackViewController+Keyboard.h"
 
 
-static NSString *const ESFeedbackAppLaunchCountKey = @"ESFeedbackAppLaunchCount";
-static NSString *const ESFeedbackWasShownKey = @"ESFeedbackWasShown";
+static NSString *const _appLaunchCountKey = @"ESFeedbackAppLaunchCount";
+static NSString *const _feedbackWasShownKey = @"ESFeedbackWasShown";
 
-static NSInteger ESFeedbackNumberOfLaunchesToShow = 0;
-static UIFont *ESFeedbackTextFont;
-static UIFont *ESFeedbackButtonsFont;
-static NSString *ESFeedbackAppID;
+static NSInteger _numberOfLaunchesToShow = 0;
+static UIFont *_textFont;
+static UIFont *_buttonsFont;
+static NSString *_appID;
+static void (^_onPromptWasDismissed)(ESFeedbackPromptViewController *, BOOL);
 
 static ESFeedbackViewController *currentInstance;
 
@@ -53,21 +54,21 @@ static ESFeedbackViewController *currentInstance;
 + (void)registerAppLaunch {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    NSInteger launchCount = [userDefaults integerForKey:ESFeedbackAppLaunchCountKey];
+    NSInteger launchCount = [userDefaults integerForKey:_appLaunchCountKey];
     ++launchCount;
     
-    [userDefaults setInteger:launchCount forKey:ESFeedbackAppLaunchCountKey];
+    [userDefaults setInteger:launchCount forKey:_appLaunchCountKey];
     [userDefaults synchronize];
 }
 
 
 + (void)setNumberOfLaunchesToShow:(NSInteger)numberOfLaunches {
-    ESFeedbackNumberOfLaunchesToShow = numberOfLaunches;
+    _numberOfLaunchesToShow = numberOfLaunches;
 }
 
 
 + (void)setAppID:(NSString *)appID {
-    ESFeedbackAppID = appID;
+    _appID = appID;
 }
 
 
@@ -78,29 +79,34 @@ static ESFeedbackViewController *currentInstance;
         [vc showInView:window];
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setBool:YES forKey:ESFeedbackWasShownKey];
+        [userDefaults setBool:YES forKey:_feedbackWasShownKey];
         [userDefaults synchronize];
     }
 }
 
 
 + (UIFont *)textFont {
-    return ESFeedbackTextFont ?: [UIFont systemFontOfSize:13.0];
+    return _textFont ?: [UIFont systemFontOfSize:13.0];
 }
 
 
 + (void)setTextFont:(UIFont *)font {
-    ESFeedbackTextFont = font;
+    _textFont = font;
 }
 
 
 + (UIFont *)buttonsFont {
-    return ESFeedbackButtonsFont ?: [UIFont boldSystemFontOfSize:15.0];
+    return _buttonsFont ?: [UIFont boldSystemFontOfSize:15.0];
 }
 
 
 + (void)setButtonsFont:(UIFont *)font {
-    ESFeedbackButtonsFont = font;
+    _buttonsFont = font;
+}
+
+
++ (void)setOnPromptWasDismissed:(void (^)(ESFeedbackPromptViewController *, BOOL))block {
+    _onPromptWasDismissed = block;
 }
 
 
@@ -166,10 +172,10 @@ static ESFeedbackViewController *currentInstance;
 + (BOOL)shouldShow {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    NSInteger launchCount = [userDefaults integerForKey:ESFeedbackAppLaunchCountKey];
-    BOOL wasShown = [userDefaults boolForKey:ESFeedbackWasShownKey];
+    NSInteger launchCount = [userDefaults integerForKey:_appLaunchCountKey];
+    BOOL wasShown = [userDefaults boolForKey:_feedbackWasShownKey];
     
-    return launchCount >= ESFeedbackNumberOfLaunchesToShow && !wasShown;
+    return launchCount >= _numberOfLaunchesToShow && !wasShown;
 }
 
 
@@ -295,9 +301,14 @@ static ESFeedbackViewController *currentInstance;
 
 
 - (void)goToAppStore {
+    if (_appID == nil) {
+        // Nothing to do.
+        return;
+    }
+    
     SKStoreProductViewController *storeViewController = [[SKStoreProductViewController alloc] init];
     
-    NSNumber *appID = @(ESFeedbackAppID.integerValue);
+    NSNumber *appID = @(_appID.integerValue);
     NSDictionary *parameters = @{SKStoreProductParameterITunesItemIdentifier: appID};
     
     [storeViewController loadProductWithParameters:parameters completionBlock:nil];
@@ -305,6 +316,13 @@ static ESFeedbackViewController *currentInstance;
     
     UIViewController *rootVC = [UIApplication sharedApplication].delegate.window.rootViewController;
     [rootVC presentViewController:storeViewController animated:YES completion:nil];
+}
+
+
+- (void)promptViewController:(ESFeedbackPromptViewController *)promptVC wasDismissedChoosingOK:(BOOL)ok {
+    if (_onPromptWasDismissed != nil) {
+        _onPromptWasDismissed(promptVC, ok);
+    }
 }
 
 

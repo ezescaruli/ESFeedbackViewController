@@ -19,13 +19,12 @@
 }
 
 
-#pragma mark - UINavigationControllerDelegate
+#pragma mark - Public methods
 
 
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    if (self.onWillMoveToPromptViewController != nil) {
-        ESFeedbackPromptViewController *promptVC = (ESFeedbackPromptViewController *) viewController;
-        self.onWillMoveToPromptViewController(promptVC);
+- (void)promptViewController:(ESFeedbackPromptViewController *)promptVC wasDismissedChoosingOK:(BOOL)ok {
+    if (self.onPromptWasDismissed != nil) {
+        self.onPromptWasDismissed(promptVC, ok);
     }
 }
 
@@ -40,6 +39,17 @@
 - (void)goToAppStore {
     if (self.onGoToAppStore != nil) {
         self.onGoToAppStore();
+    }
+}
+
+
+#pragma mark - UINavigationControllerDelegate
+
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.onWillMoveToPromptViewController != nil) {
+        ESFeedbackPromptViewController *promptVC = (ESFeedbackPromptViewController *) viewController;
+        self.onWillMoveToPromptViewController(promptVC);
     }
 }
 

@@ -12,9 +12,11 @@
 @interface ESFeedbackNavigationController : UINavigationController <UINavigationControllerDelegate>
 
 @property (nonatomic, copy) void (^onWillMoveToPromptViewController)(ESFeedbackPromptViewController *);
+@property (nonatomic, copy) void (^onPromptWasDismissed)(ESFeedbackPromptViewController *, BOOL);
 @property (nonatomic, copy) void (^onFinish)(void);
 @property (nonatomic, copy) void (^onGoToAppStore)(void);
 
+- (void)promptViewController:(ESFeedbackPromptViewController *)promptVC wasDismissedChoosingOK:(BOOL)ok;
 - (void)finish;
 - (void)goToAppStore;
 

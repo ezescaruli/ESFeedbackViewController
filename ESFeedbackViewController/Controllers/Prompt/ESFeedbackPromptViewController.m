@@ -5,6 +5,7 @@
 //
 
 #import "ESFeedbackPromptViewController.h"
+#import "ESFeedbackNavigationController.h"
 
 
 @implementation ESFeedbackPromptViewController
@@ -26,12 +27,14 @@
 
 
 - (void)performCancelAction {
-    NSAssert(false, @"This method should be overriden in subclasses.");
+    ESFeedbackNavigationController *navigationController = (ESFeedbackNavigationController *) self.navigationController;
+    [navigationController promptViewController:self wasDismissedChoosingOK:NO];
 }
 
 
 - (void)performOKAction {
-    NSAssert(false, @"This method should be overriden in subclasses.");
+    ESFeedbackNavigationController *navigationController = (ESFeedbackNavigationController *) self.navigationController;
+    [navigationController promptViewController:self wasDismissedChoosingOK:YES];
 }
 
 

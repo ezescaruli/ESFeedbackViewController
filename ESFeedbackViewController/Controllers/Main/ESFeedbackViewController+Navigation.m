@@ -22,6 +22,7 @@ static CGFloat const ESFeedbackFinishPopupHeight = 44.0;
 - (void)setupWithCurrentPromptAnimated:(BOOL)animated;
 - (void)dismissClearingCurrentInstance:(BOOL)clear;
 - (void)goToAppStore;
+- (void)promptViewController:(ESFeedbackPromptViewController *)promptVC wasDismissedChoosingOK:(BOOL)ok;
 
 @end
 
@@ -61,6 +62,10 @@ static CGFloat const ESFeedbackFinishPopupHeight = 44.0;
     
     self.feedbackNavigationController.onWillMoveToPromptViewController = ^(ESFeedbackPromptViewController *controller) {
         [safeMe setupWithCurrentPromptAnimated:YES];
+    };
+    
+    self.feedbackNavigationController.onPromptWasDismissed = ^(ESFeedbackPromptViewController *promptVC, BOOL ok) {
+        [safeMe promptViewController:promptVC wasDismissedChoosingOK:ok];
     };
     
     self.feedbackNavigationController.onFinish = ^{

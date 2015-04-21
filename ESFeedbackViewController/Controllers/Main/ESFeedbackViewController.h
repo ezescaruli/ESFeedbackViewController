@@ -6,6 +6,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ESFeedbackPromptViewController.h"
+
 
 @interface ESFeedbackViewController : UIViewController
 
@@ -42,5 +44,12 @@
  */
 + (UIFont *)buttonsFont;
 + (void)setButtonsFont:(UIFont *)font;
+
+/**
+ This block called when the OK or Cancel button is pressed in each of the
+ prompt screens. Receives the controller for the screen, and a boolean
+ indicating if the OK button was pressed.
+ */
++ (void)setOnPromptWasDismissed:(void (^)(ESFeedbackPromptViewController *, BOOL))block;
 
 @end

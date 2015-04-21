@@ -45,11 +45,13 @@
 
 
 - (void)performCancelAction {
+    [super performCancelAction];
     [self performSegueWithIdentifier:@"PushQuestion" sender:self];
 }
 
 
 - (void)performOKAction {
+    [super performOKAction];
     [self performSegueWithIdentifier:@"PushRating" sender:self];
 }
 
