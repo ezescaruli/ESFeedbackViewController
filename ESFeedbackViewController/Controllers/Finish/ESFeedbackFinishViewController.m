@@ -7,6 +7,8 @@
 #import "ESFeedbackFinishViewController.h"
 #import "ESFeedbackViewController.h"
 
+#import "UIColor+Hex.h"
+
 
 @interface ESFeedbackFinishViewController ()
 

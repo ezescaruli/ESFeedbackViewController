@@ -22,6 +22,7 @@
 		F0DB1EE41AE5D9B20079B81E /* ESFeedbackViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EE31AE5D9B20079B81E /* ESFeedbackViewController+Navigation.m */; };
 		F0DB1EE81AE5DB130079B81E /* ESFeedbackFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EE71AE5DB130079B81E /* ESFeedbackFinishViewController.m */; };
 		F0DB1EEB1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EEA1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m */; };
+		F0DB1EEE1AE5DD090079B81E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EED1AE5DD090079B81E /* UIColor+Hex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,9 @@
 		F0DB1EE71AE5DB130079B81E /* ESFeedbackFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackFinishViewController.m; sourceTree = "<group>"; };
 		F0DB1EE91AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ESFeedbackViewController+Keyboard.h"; sourceTree = "<group>"; };
 		F0DB1EEA1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ESFeedbackViewController+Keyboard.m"; sourceTree = "<group>"; };
+		F0DB1EEC1AE5DD090079B81E /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		F0DB1EED1AE5DD090079B81E /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		F0DB1EF01AE5DEF10079B81E /* ESFeedbackViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ESFeedbackViewController-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				F074D2CF1AE4E69E0092D962 /* Demo */,
 				F0DB1EC81AE5D1770079B81E /* ESFeedbackViewController */,
 				F074D2A51AE4E42D0092D962 /* Products */,
+				F0DB1EEF1AE5DECA0079B81E /* Support */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +169,8 @@
 			children = (
 				F0DB1EDA1AE5D7EA0079B81E /* UIView+Blur.h */,
 				F0DB1EDB1AE5D7EA0079B81E /* UIView+Blur.m */,
+				F0DB1EEC1AE5DD090079B81E /* UIColor+Hex.h */,
+				F0DB1EED1AE5DD090079B81E /* UIColor+Hex.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -192,6 +199,14 @@
 				F0DB1EE71AE5DB130079B81E /* ESFeedbackFinishViewController.m */,
 			);
 			path = Finish;
+			sourceTree = "<group>";
+		};
+		F0DB1EEF1AE5DECA0079B81E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F0DB1EF01AE5DEF10079B81E /* ESFeedbackViewController-Prefix.pch */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F074D2E11AE4E69E0092D962 /* ViewController.m in Sources */,
+				F0DB1EEE1AE5DD090079B81E /* UIColor+Hex.m in Sources */,
 				F0DB1ED01AE5D2550079B81E /* ESFeedbackViewController.m in Sources */,
 				F0DB1EE81AE5DB130079B81E /* ESFeedbackFinishViewController.m in Sources */,
 				F074D2E01AE4E69E0092D962 /* main.m in Sources */,
@@ -385,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "Support/ESFeedbackViewController-Prefix.pch";
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -395,6 +412,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "Support/ESFeedbackViewController-Prefix.pch";
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

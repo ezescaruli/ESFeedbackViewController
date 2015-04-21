@@ -11,6 +11,7 @@
 #import "ESFeedbackNavigationController.h"
 
 #import "UIView+Blur.h"
+#import "UIColor+Hex.h"
 #import "ESFeedbackViewController+Navigation.h"
 #import "ESFeedbackViewController+Keyboard.h"
 
@@ -20,7 +21,7 @@ static NSString *const ESFeedbackWasShownKey = @"ESFeedbackWasShown";
 
 static NSInteger ESFeedbackNumberOfLaunchesToShow = 0;
 static UIFont *ESFeedbackTextFont;
-static UIFont *PCDFeedbackButtonsFont;
+static UIFont *ESFeedbackButtonsFont;
 static NSString *PCDFeedbackAppID;
 
 static ESFeedbackViewController *currentInstance;
@@ -94,12 +95,12 @@ static ESFeedbackViewController *currentInstance;
 
 
 + (UIFont *)buttonsFont {
-    return PCDFeedbackButtonsFont ?: [UIFont boldSystemFontOfSize:15.0];
+    return ESFeedbackButtonsFont ?: [UIFont boldSystemFontOfSize:15.0];
 }
 
 
 + (void)setButtonsFont:(UIFont *)font {
-    PCDFeedbackButtonsFont = font;
+    ESFeedbackButtonsFont = font;
 }
 
 
