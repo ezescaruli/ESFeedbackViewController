@@ -14,6 +14,7 @@
 		F074D2E01AE4E69E0092D962 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F074D2D81AE4E69E0092D962 /* main.m */; };
 		F074D2E11AE4E69E0092D962 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F074D2DA1AE4E69E0092D962 /* ViewController.m */; };
 		F0DB1ECB1AE5D1770079B81E /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB1ECA1AE5D1770079B81E /* Feedback.storyboard */; };
+		F0DB1ED01AE5D2550079B81E /* ESFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1ECF1AE5D2550079B81E /* ESFeedbackViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		F074D2D91AE4E69E0092D962 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F074D2DA1AE4E69E0092D962 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F0DB1ECA1AE5D1770079B81E /* Feedback.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
+		F0DB1ECE1AE5D2550079B81E /* ESFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFeedbackViewController.h; sourceTree = "<group>"; };
+		F0DB1ECF1AE5D2550079B81E /* ESFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 		F0DB1EC81AE5D1770079B81E /* ESFeedbackViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F0DB1ECC1AE5D2550079B81E /* Controllers */,
 				F0DB1EC91AE5D1770079B81E /* Storyboard */,
 			);
 			path = ESFeedbackViewController;
@@ -88,6 +92,23 @@
 				F0DB1ECA1AE5D1770079B81E /* Feedback.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F0DB1ECC1AE5D2550079B81E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0DB1ECD1AE5D2550079B81E /* Main */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F0DB1ECD1AE5D2550079B81E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F0DB1ECE1AE5D2550079B81E /* ESFeedbackViewController.h */,
+				F0DB1ECF1AE5D2550079B81E /* ESFeedbackViewController.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F074D2E11AE4E69E0092D962 /* ViewController.m in Sources */,
+				F0DB1ED01AE5D2550079B81E /* ESFeedbackViewController.m in Sources */,
 				F074D2E01AE4E69E0092D962 /* main.m in Sources */,
 				F074D2DB1AE4E69E0092D962 /* AppDelegate.m in Sources */,
 			);
