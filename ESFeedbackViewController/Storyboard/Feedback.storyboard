@@ -257,7 +257,7 @@
         <!--Feedback Rating View Controller-->
         <scene sceneID="sw3-ZQ-hB2">
             <objects>
-                <viewController id="sn2-cg-6nk" customClass="PCDFeedbackRatingViewController" sceneMemberID="viewController">
+                <viewController id="sn2-cg-6nk" customClass="ESFeedbackRatingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DXG-W7-UbP"/>
                         <viewControllerLayoutGuide type="bottom" id="xob-7x-h0g"/>
