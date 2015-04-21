@@ -23,6 +23,7 @@
 		F0DB1EE81AE5DB130079B81E /* ESFeedbackFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EE71AE5DB130079B81E /* ESFeedbackFinishViewController.m */; };
 		F0DB1EEB1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EEA1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m */; };
 		F0DB1EEE1AE5DD090079B81E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EED1AE5DD090079B81E /* UIColor+Hex.m */; };
+		F0DB1EF31AE5E2710079B81E /* ESFeedbackEnjoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EF21AE5E2710079B81E /* ESFeedbackEnjoyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		F0DB1EEC1AE5DD090079B81E /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		F0DB1EED1AE5DD090079B81E /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		F0DB1EF01AE5DEF10079B81E /* ESFeedbackViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ESFeedbackViewController-Prefix.pch"; sourceTree = "<group>"; };
+		F0DB1EF11AE5E2710079B81E /* ESFeedbackEnjoyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFeedbackEnjoyViewController.h; sourceTree = "<group>"; };
+		F0DB1EF21AE5E2710079B81E /* ESFeedbackEnjoyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackEnjoyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,8 @@
 			children = (
 				F0DB1ED21AE5D46B0079B81E /* ESFeedbackPromptViewController.h */,
 				F0DB1ED31AE5D46B0079B81E /* ESFeedbackPromptViewController.m */,
+				F0DB1EF11AE5E2710079B81E /* ESFeedbackEnjoyViewController.h */,
+				F0DB1EF21AE5E2710079B81E /* ESFeedbackEnjoyViewController.m */,
 			);
 			path = Prompt;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				F0DB1ED81AE5D6900079B81E /* ESFeedbackNavigationController.m in Sources */,
 				F0DB1ED41AE5D46B0079B81E /* ESFeedbackPromptViewController.m in Sources */,
 				F0DB1EDC1AE5D7EA0079B81E /* UIView+Blur.m in Sources */,
+				F0DB1EF31AE5E2710079B81E /* ESFeedbackEnjoyViewController.m in Sources */,
 				F0DB1EEB1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

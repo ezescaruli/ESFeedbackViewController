@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ESFeedbackViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [ESFeedbackViewController setNumberOfLaunchesToShow:3];
+    [ESFeedbackViewController registerAppLaunch];
+    
+    [ESFeedbackViewController showIfNecessary];
+    
     return YES;
 }
 

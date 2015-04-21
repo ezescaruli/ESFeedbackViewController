@@ -22,7 +22,7 @@ static NSString *const ESFeedbackWasShownKey = @"ESFeedbackWasShown";
 static NSInteger ESFeedbackNumberOfLaunchesToShow = 0;
 static UIFont *ESFeedbackTextFont;
 static UIFont *ESFeedbackButtonsFont;
-static NSString *PCDFeedbackAppID;
+static NSString *ESFeedbackAppID;
 
 static ESFeedbackViewController *currentInstance;
 
@@ -67,7 +67,7 @@ static ESFeedbackViewController *currentInstance;
 
 
 + (void)setAppID:(NSString *)appID {
-    PCDFeedbackAppID = appID;
+    ESFeedbackAppID = appID;
 }
 
 
@@ -297,7 +297,7 @@ static ESFeedbackViewController *currentInstance;
 - (void)goToAppStore {
     SKStoreProductViewController *storeViewController = [[SKStoreProductViewController alloc] init];
     
-    NSNumber *appID = @(PCDFeedbackAppID.integerValue);
+    NSNumber *appID = @(ESFeedbackAppID.integerValue);
     NSDictionary *parameters = @{SKStoreProductParameterITunesItemIdentifier: appID};
     
     [storeViewController loadProductWithParameters:parameters completionBlock:nil];

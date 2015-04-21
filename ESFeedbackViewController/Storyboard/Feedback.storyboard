@@ -132,7 +132,7 @@
         <!--Feedback Enjoy View Controller-->
         <scene sceneID="ZLE-mw-YZN">
             <objects>
-                <viewController id="Kak-sS-lFp" customClass="PCDFeedbackEnjoyViewController" sceneMemberID="viewController">
+                <viewController id="Kak-sS-lFp" customClass="ESFeedbackEnjoyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jra-KS-CtG"/>
                         <viewControllerLayoutGuide type="bottom" id="th4-Sm-9KU"/>
