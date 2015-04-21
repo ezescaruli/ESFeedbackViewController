@@ -12,14 +12,14 @@
 
 #import "UIView+Blur.h"
 #import "ESFeedbackViewController+Navigation.h"
-#import "PCDFeedbackViewController+Keyboard.h"
+#import "ESFeedbackViewController+Keyboard.h"
 
 
 static NSString *const ESFeedbackAppLaunchCountKey = @"ESFeedbackAppLaunchCount";
 static NSString *const ESFeedbackWasShownKey = @"ESFeedbackWasShown";
 
 static NSInteger ESFeedbackNumberOfLaunchesToShow = 0;
-static UIFont *PCDFeedbackTextFont;
+static UIFont *ESFeedbackTextFont;
 static UIFont *PCDFeedbackButtonsFont;
 static NSString *PCDFeedbackAppID;
 
@@ -84,12 +84,12 @@ static ESFeedbackViewController *currentInstance;
 
 
 + (UIFont *)textFont {
-    return PCDFeedbackTextFont ?: [UIFont systemFontOfSize:13.0];
+    return ESFeedbackTextFont ?: [UIFont systemFontOfSize:13.0];
 }
 
 
 + (void)setTextFont:(UIFont *)font {
-    PCDFeedbackTextFont = font;
+    ESFeedbackTextFont = font;
 }
 
 

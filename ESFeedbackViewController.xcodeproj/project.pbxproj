@@ -21,6 +21,7 @@
 		F0DB1EE11AE5D82C0079B81E /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EE01AE5D82C0079B81E /* UIImageEffects.m */; };
 		F0DB1EE41AE5D9B20079B81E /* ESFeedbackViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EE31AE5D9B20079B81E /* ESFeedbackViewController+Navigation.m */; };
 		F0DB1EE81AE5DB130079B81E /* ESFeedbackFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EE71AE5DB130079B81E /* ESFeedbackFinishViewController.m */; };
+		F0DB1EEB1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1EEA1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		F0DB1EE31AE5D9B20079B81E /* ESFeedbackViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ESFeedbackViewController+Navigation.m"; sourceTree = "<group>"; };
 		F0DB1EE61AE5DB130079B81E /* ESFeedbackFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFeedbackFinishViewController.h; sourceTree = "<group>"; };
 		F0DB1EE71AE5DB130079B81E /* ESFeedbackFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackFinishViewController.m; sourceTree = "<group>"; };
+		F0DB1EE91AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ESFeedbackViewController+Keyboard.h"; sourceTree = "<group>"; };
+		F0DB1EEA1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ESFeedbackViewController+Keyboard.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				F0DB1ECF1AE5D2550079B81E /* ESFeedbackViewController.m */,
 				F0DB1EE21AE5D9B20079B81E /* ESFeedbackViewController+Navigation.h */,
 				F0DB1EE31AE5D9B20079B81E /* ESFeedbackViewController+Navigation.m */,
+				F0DB1EE91AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.h */,
+				F0DB1EEA1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				F0DB1ED81AE5D6900079B81E /* ESFeedbackNavigationController.m in Sources */,
 				F0DB1ED41AE5D46B0079B81E /* ESFeedbackPromptViewController.m in Sources */,
 				F0DB1EDC1AE5D7EA0079B81E /* UIView+Blur.m in Sources */,
+				F0DB1EEB1AE5DC2A0079B81E /* ESFeedbackViewController+Keyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

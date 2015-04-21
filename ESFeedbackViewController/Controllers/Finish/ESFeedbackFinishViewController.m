@@ -37,7 +37,7 @@
 
 
 - (void)setupTextLabel {
-    self.textLabel.font = [PCDFeedbackViewController buttonsFont];
+    self.textLabel.font = [ESFeedbackViewController buttonsFont];
     self.textLabel.textColor = [UIColor whiteColor];
 }
 
