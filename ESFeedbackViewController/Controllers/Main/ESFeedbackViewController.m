@@ -7,7 +7,7 @@
 #import <StoreKit/StoreKit.h>
 
 #import "ESFeedbackViewController.h"
-#import "PCDFeedbackPromptViewController.h"
+#import "ESFeedbackPromptViewController.h"
 #import "PCDFeedbackNavigationController.h"
 
 #import "UIView+Blur.h"
@@ -138,13 +138,13 @@ static ESFeedbackViewController *currentInstance;
 
 
 - (IBAction)cancelButtonAction {
-    PCDFeedbackPromptViewController *currentPromptVC = (PCDFeedbackPromptViewController *) [self.feedbackNavigationController topViewController];
+    ESFeedbackPromptViewController *currentPromptVC = (ESFeedbackPromptViewController *) [self.feedbackNavigationController topViewController];
     [currentPromptVC performCancelAction];
 }
 
 
 - (IBAction)OKButtonAction {
-    PCDFeedbackPromptViewController *currentPromptVC = (PCDFeedbackPromptViewController *) [self.feedbackNavigationController topViewController];
+    ESFeedbackPromptViewController *currentPromptVC = (ESFeedbackPromptViewController *) [self.feedbackNavigationController topViewController];
     [currentPromptVC performOKAction];
 }
 
@@ -257,7 +257,7 @@ static ESFeedbackViewController *currentInstance;
 
 
 - (void)setupWithCurrentPromptAnimated:(BOOL)animated {
-    PCDFeedbackPromptViewController *currentPromptVC = (PCDFeedbackPromptViewController *) [self.feedbackNavigationController topViewController];
+    ESFeedbackPromptViewController *currentPromptVC = (ESFeedbackPromptViewController *) [self.feedbackNavigationController topViewController];
     
     [self.cancelButton setTitle:[currentPromptVC textForCancelButton]
                        forState:UIControlStateNormal];
@@ -270,7 +270,7 @@ static ESFeedbackViewController *currentInstance;
 
 
 - (void)setupGeneralContainerHeightAnimated:(BOOL)animated {
-    PCDFeedbackPromptViewController *currentPromptVC = (PCDFeedbackPromptViewController *) [self.feedbackNavigationController topViewController];
+    ESFeedbackPromptViewController *currentPromptVC = (ESFeedbackPromptViewController *) [self.feedbackNavigationController topViewController];
     
     [currentPromptVC.view setNeedsLayout];
     [currentPromptVC.view layoutIfNeeded];

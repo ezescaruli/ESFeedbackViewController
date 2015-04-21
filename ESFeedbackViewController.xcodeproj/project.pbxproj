@@ -15,6 +15,7 @@
 		F074D2E11AE4E69E0092D962 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F074D2DA1AE4E69E0092D962 /* ViewController.m */; };
 		F0DB1ECB1AE5D1770079B81E /* Feedback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB1ECA1AE5D1770079B81E /* Feedback.storyboard */; };
 		F0DB1ED01AE5D2550079B81E /* ESFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1ECF1AE5D2550079B81E /* ESFeedbackViewController.m */; };
+		F0DB1ED41AE5D46B0079B81E /* ESFeedbackPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB1ED31AE5D46B0079B81E /* ESFeedbackPromptViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		F0DB1ECA1AE5D1770079B81E /* Feedback.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feedback.storyboard; sourceTree = "<group>"; };
 		F0DB1ECE1AE5D2550079B81E /* ESFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFeedbackViewController.h; sourceTree = "<group>"; };
 		F0DB1ECF1AE5D2550079B81E /* ESFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackViewController.m; sourceTree = "<group>"; };
+		F0DB1ED21AE5D46B0079B81E /* ESFeedbackPromptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESFeedbackPromptViewController.h; sourceTree = "<group>"; };
+		F0DB1ED31AE5D46B0079B81E /* ESFeedbackPromptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESFeedbackPromptViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				F0DB1ECD1AE5D2550079B81E /* Main */,
+				F0DB1ED11AE5D46B0079B81E /* Prompt */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -109,6 +113,15 @@
 				F0DB1ECF1AE5D2550079B81E /* ESFeedbackViewController.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		F0DB1ED11AE5D46B0079B81E /* Prompt */ = {
+			isa = PBXGroup;
+			children = (
+				F0DB1ED21AE5D46B0079B81E /* ESFeedbackPromptViewController.h */,
+				F0DB1ED31AE5D46B0079B81E /* ESFeedbackPromptViewController.m */,
+			);
+			path = Prompt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +199,7 @@
 				F0DB1ED01AE5D2550079B81E /* ESFeedbackViewController.m in Sources */,
 				F074D2E01AE4E69E0092D962 /* main.m in Sources */,
 				F074D2DB1AE4E69E0092D962 /* AppDelegate.m in Sources */,
+				F0DB1ED41AE5D46B0079B81E /* ESFeedbackPromptViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
