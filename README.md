@@ -7,6 +7,9 @@ ESFeedbackViewController
 * A review in the App Store.
 
 
+![Informative Demo](./Readme/Feedback.gif)
+
+
 ### Usage
 
 In your `AppDelegate`, once the application finished launching, add:
