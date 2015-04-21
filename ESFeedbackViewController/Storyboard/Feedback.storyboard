@@ -298,7 +298,7 @@
         <!--Feedback Suggestion View Controller-->
         <scene sceneID="ikC-uy-zZ4">
             <objects>
-                <viewController id="khU-DS-0Vr" customClass="PCDFeedbackSuggestionViewController" sceneMemberID="viewController">
+                <viewController id="khU-DS-0Vr" customClass="ESFeedbackSuggestionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="psD-Sg-UoZ"/>
                         <viewControllerLayoutGuide type="bottom" id="Re4-Ek-alZ"/>

@@ -7,6 +7,7 @@
 #import "ESFeedbackSuggestionViewController.h"
 #import "ESFeedbackNavigationController.h"
 #import "ESFeedbackViewController.h"
+#import "ESScreenUtils.h"
 
 #import "UIColor+Hex.h"
 
@@ -72,7 +73,7 @@ static NSString *const ESFeedbackSuggestionTextViewFeedback = @"Write here.";
 
 
 - (CGFloat)heightForNavigationController {
-    if ([FGScreenUtils screenIsInches3_5]) {
+    if ([ESScreenUtils screenIsInches3_5]) {
         return 100.0;
     }
     
