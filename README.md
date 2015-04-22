@@ -7,7 +7,7 @@ ESFeedbackViewController
 * A review in the App Store.
 
 
-<img src="./Readme/Feedback.gif" alt="Drawing" style="width: 200px;"/>
+<img src="./Readme/Feedback.gif" alt="Drawing" width="300"/>
 
 
 ### Usage
