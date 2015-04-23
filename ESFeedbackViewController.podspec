@@ -9,5 +9,7 @@ Pod::Spec.new do |s|
 	s.source       = {:git => "https://github.com/ezescaruli/ESFeedbackViewController.git", :tag => "0.1.0"}
 	s.source_files = "ESFeedbackViewController/**/*.{h,m}"
 	s.resources    = "ESFeedbackViewController/Storyboard/Feedback.storyboard"
+    s.platform     = :ios, "7.0"
+    s.requires_arc = true
 
 end
