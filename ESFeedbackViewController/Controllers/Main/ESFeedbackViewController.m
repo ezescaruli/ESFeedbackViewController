@@ -154,6 +154,11 @@ static ESFeedbackViewController *_currentInstance;
 }
 
 
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+
 #pragma mark - Action
 
 
