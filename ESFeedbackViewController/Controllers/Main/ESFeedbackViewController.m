@@ -26,7 +26,8 @@ static UIFont *_buttonsFont;
 static NSString *_appID;
 static void (^_onPromptWasDismissed)(ESFeedbackPromptViewController *, BOOL);
 
-static ESFeedbackViewController *currentInstance;
+static UIWindow *_presentingWindow;
+static ESFeedbackViewController *_currentInstance;
 
 
 @interface ESFeedbackViewController () <SKStoreProductViewControllerDelegate>
@@ -75,9 +76,10 @@ static ESFeedbackViewController *currentInstance;
 
 + (void)showIfNecessary {
     if ([self shouldShow]) {
-        ESFeedbackViewController *vc = [self instance];
-        UIWindow *window = [UIApplication sharedApplication].delegate.window;
-        [vc showInView:window];
+//        ESFeedbackViewController *vc = [self instance];
+//        UIWindow *window = [UIApplication sharedApplication].delegate.window;
+//        [vc showInView:window];
+        [self createNewInstanceAndShow];
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults setBool:YES forKey:_feedbackWasShownKey];
@@ -171,6 +173,8 @@ static ESFeedbackViewController *currentInstance;
 
 
 + (BOOL)shouldShow {
+    return YES;
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     NSInteger launchCount = [userDefaults integerForKey:_appLaunchCountKey];
@@ -180,18 +184,26 @@ static ESFeedbackViewController *currentInstance;
 }
 
 
++ (void)createNewInstanceAndShow {
+    _presentingWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    _presentingWindow.backgroundColor = [UIColor redColor];
+    
+    [_presentingWindow makeKeyAndVisible];
+}
+
+
 + (instancetype)instance {
-    if (currentInstance == nil) {
+    if (_currentInstance == nil) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Feedback" bundle:nil];
-        currentInstance = [storyboard instantiateInitialViewController];
+        _currentInstance = [storyboard instantiateInitialViewController];
     }
     
-    return currentInstance;
+    return _currentInstance;
 }
 
 
 + (void)clearCurrentInstance {
-    currentInstance = nil;
+    _currentInstance = nil;
 }
 
 
