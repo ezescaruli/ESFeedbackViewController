@@ -14,6 +14,7 @@
 #import "UIColor+Hex.h"
 #import "ESFeedbackViewController+Navigation.h"
 #import "ESFeedbackViewController+Keyboard.h"
+#import "ESFeedbackViewController+Constraints.h"
 
 
 static NSString *const _appLaunchCountKey = @"ESFeedbackAppLaunchCount";
@@ -170,6 +171,8 @@ static ESFeedbackViewController *currentInstance;
 
 
 + (BOOL)shouldShow {
+    return YES;
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     NSInteger launchCount = [userDefaults integerForKey:_appLaunchCountKey];
@@ -197,7 +200,9 @@ static ESFeedbackViewController *currentInstance;
 - (void)showInView:(UIView *)hostView {
     // First, a blurred view is created and added to the host view.
     self.blurView = [hostView viewByApplyingBlurWithTintColor:nil];
+    self.blurView.translatesAutoresizingMaskIntoConstraints = NO;
     [hostView addSubview:self.blurView];
+    [self setupEdgeConstraintsForView:self.blurView];
     
     // Self's view is shown over the blurred view.
     [self.blurView addSubview:self.view];
