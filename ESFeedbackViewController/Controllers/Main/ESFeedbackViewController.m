@@ -17,6 +17,7 @@
 #import "ESFeedbackViewController+Constraints.h"
 
 
+// NSUserDefauls keys.
 static NSString *const _appLaunchCountKey = @"ESFeedbackAppLaunchCount";
 static NSString *const _feedbackWasShownKey = @"ESFeedbackWasShown";
 
@@ -26,7 +27,12 @@ static UIFont *_buttonsFont;
 static NSString *_appID;
 static void (^_onPromptWasDismissed)(ESFeedbackPromptViewController *, BOOL);
 
+// A reference to the main window of the app.
+static UIWindow *_mainWindow;
+
+// The window that shows the controller.
 static UIWindow *_presentingWindow;
+
 static ESFeedbackViewController *_currentInstance;
 
 
@@ -76,10 +82,7 @@ static ESFeedbackViewController *_currentInstance;
 
 + (void)showIfNecessary {
     if ([self shouldShow]) {
-//        ESFeedbackViewController *vc = [self instance];
-//        UIWindow *window = [UIApplication sharedApplication].delegate.window;
-//        [vc showInView:window];
-        [self createNewInstanceAndShow];
+        [self show];
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults setBool:YES forKey:_feedbackWasShownKey];
@@ -144,6 +147,13 @@ static ESFeedbackViewController *_currentInstance;
 }
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.blurView.alpha = 0.0;
+    self.view.alpha = 0.0;
+    [self fadeInBlurView];
+}
+
+
 #pragma mark - Action
 
 
@@ -184,9 +194,14 @@ static ESFeedbackViewController *_currentInstance;
 }
 
 
-+ (void)createNewInstanceAndShow {
++ (void)show {
+    // First of all, hold a reference to the main window.
+    _mainWindow = [UIApplication sharedApplication].keyWindow;
+    
+    // Then create a new window to present the feedback view controller.
     _presentingWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    _presentingWindow.backgroundColor = [UIColor redColor];
+    _presentingWindow.backgroundColor = [UIColor clearColor];
+    _presentingWindow.rootViewController = [ESFeedbackViewController instance];
     
     [_presentingWindow makeKeyAndVisible];
 }
@@ -204,24 +219,6 @@ static ESFeedbackViewController *_currentInstance;
 
 + (void)clearCurrentInstance {
     _currentInstance = nil;
-}
-
-
-- (void)showInView:(UIView *)hostView {
-    // First, a blurred view is created and added to the host view.
-    self.blurView = [hostView viewByApplyingBlurWithTintColor:nil];
-    self.blurView.translatesAutoresizingMaskIntoConstraints = NO;
-    [hostView addSubview:self.blurView];
-    [self setupEdgeConstraintsForView:self.blurView];
-    
-    // Self's view is shown over the blurred view.
-    [self.blurView addSubview:self.view];
-    self.view.frame = self.blurView.bounds;
-    
-    // Show the blur view with a fade.
-    self.blurView.alpha = 0.0;
-    self.view.alpha = 0.0;
-    [self fadeInBlurView];
 }
 
 
@@ -245,9 +242,9 @@ static ESFeedbackViewController *_currentInstance;
 - (void)dismissClearingCurrentInstance:(BOOL)clear {
     [UIView animateWithDuration:0.5
                      animations:^{
-                         self.blurView.alpha = 0.0;
+                         self.view.alpha = 0.0;
                      } completion:^(BOOL finished) {
-                         [self.blurView removeFromSuperview];
+                         [_mainWindow makeKeyAndVisible];
                          
                          if (clear) {
                              [ESFeedbackViewController clearCurrentInstance];
@@ -257,8 +254,19 @@ static ESFeedbackViewController *_currentInstance;
 
 
 - (void)setupStyles {
+    [self setupBlurView];
     [self setupCancelButton];
     [self setupOKButton];
+}
+
+
+- (void)setupBlurView {
+    self.blurView = [_mainWindow viewByApplyingBlurWithTintColor:nil];
+    self.blurView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.blurView];
+    [self setupEdgeConstraintsForView:self.blurView];
+    
+    [self.view sendSubviewToBack:self.blurView];
 }
 
 
