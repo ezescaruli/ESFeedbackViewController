@@ -248,6 +248,7 @@ static ESFeedbackViewController *_currentInstance;
                          self.view.alpha = 0.0;
                      } completion:^(BOOL finished) {
                          [_mainWindow makeKeyAndVisible];
+                         _presentingWindow = nil;
                          
                          if (clear) {
                              [ESFeedbackViewController clearCurrentInstance];
