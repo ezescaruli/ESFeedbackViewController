@@ -1,6 +1,8 @@
 ESFeedbackViewController
 ========================
 
+[![Build Status](https://api.travis-ci.org/ezescaruli/ESFeedbackViewController.svg?branch=master)](https://travis-ci.org/ezescaruli/ESFeedbackViewController)
+
 `ESFeedbackViewController` is an iOS library to show a feedback screen within an application. It shows a set of prompts, one after the other. Depending on what the user chooses in each step, the final input can end up being:
 
 * A written suggestion.
