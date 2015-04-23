@@ -2,6 +2,7 @@ ESFeedbackViewController
 ========================
 
 [![Build Status](https://api.travis-ci.org/ezescaruli/ESFeedbackViewController.svg?branch=master)](https://travis-ci.org/ezescaruli/ESFeedbackViewController)
+![Pod Platform](http://img.shields.io/cocoapods/v/ESFeedbackViewController.svg?style=flat)
 
 `ESFeedbackViewController` is an iOS library to show a feedback screen within an application. It shows a set of prompts, one after the other. Depending on what the user chooses in each step, the final input can end up being:
 
@@ -12,10 +13,20 @@ ESFeedbackViewController
 <img src="./Readme/Feedback.gif" alt="Drawing" width="300"/>
 
 
+### Installation
+
+Simply add `ESFeedbackViewController` to your `Podfile`:
+```ruby
+pod 'ESFeedbackViewController'
+```
+
+
 ### Usage
 
 In your `AppDelegate`, once the application finished launching, add:
 ```objc
+#import <ESFeedbackViewController/ESFeedbackViewController.h>
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   ...
 
