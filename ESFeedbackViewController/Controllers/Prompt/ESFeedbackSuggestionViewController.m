@@ -43,7 +43,11 @@ static NSString *const ESFeedbackSuggestionTextViewFeedback = @"Write here.";
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    
     self.questionLabel.preferredMaxLayoutWidth = self.questionLabel.bounds.size.width;
+    
+    // A call to layoutIfNeeded is necessary in iOS 7.
+    [self.view layoutIfNeeded];
 }
 
 
