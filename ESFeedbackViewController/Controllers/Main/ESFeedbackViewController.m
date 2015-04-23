@@ -199,7 +199,7 @@ static ESFeedbackViewController *_currentInstance;
 
 + (void)show {
     // First of all, hold a reference to the main window.
-    _mainWindow = [UIApplication sharedApplication].keyWindow;
+    _mainWindow = [[[UIApplication sharedApplication] delegate] window];
     
     // Then create a new window to present the feedback view controller.
     _presentingWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
