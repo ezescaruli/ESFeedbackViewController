@@ -1,2 +1,2 @@
 language: objective-c
-script: "cd Example && xcodebuild -workspace Example.xcworkspace -scheme Example -configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO"
+script: 'cd Example && xcodebuild -workspace Example.xcworkspace -scheme Example -configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO'
