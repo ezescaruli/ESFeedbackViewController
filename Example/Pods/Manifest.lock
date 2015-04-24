@@ -1,0 +1,14 @@
+PODS:
+  - ESFeedbackViewController (0.1.0)
+
+DEPENDENCIES:
+  - ESFeedbackViewController (from `..`)
+
+EXTERNAL SOURCES:
+  ESFeedbackViewController:
+    :path: ..
+
+SPEC CHECKSUMS:
+  ESFeedbackViewController: 26ddb71966dede60f40ee4a3e8c340f182fb0617
+
+COCOAPODS: 0.35.0
