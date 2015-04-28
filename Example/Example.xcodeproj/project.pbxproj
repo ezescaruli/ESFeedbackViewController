@@ -30,8 +30,6 @@
 		F0A2663F1AEA076B00E28829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0A266411AEA076B00E28829 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0A266441AEA076B00E28829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		F0A2664F1AEA076B00E28829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0A266501AEA076B00E28829 /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				F0A266331AEA076B00E28829 /* Example */,
-				F0A2664D1AEA076B00E28829 /* ExampleTests */,
 				F0A266321AEA076B00E28829 /* Products */,
 				9C09B4BBA8906C08778251FE /* Pods */,
 				1D3FAA0B432A78B9140894F1 /* Frameworks */,
@@ -102,23 +99,6 @@
 			children = (
 				F0A266351AEA076B00E28829 /* Info.plist */,
 				F0A266361AEA076B00E28829 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F0A2664D1AEA076B00E28829 /* ExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				F0A266501AEA076B00E28829 /* ExampleTests.m */,
-				F0A2664E1AEA076B00E28829 /* Supporting Files */,
-			);
-			path = ExampleTests;
-			sourceTree = "<group>";
-		};
-		F0A2664E1AEA076B00E28829 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F0A2664F1AEA076B00E28829 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
