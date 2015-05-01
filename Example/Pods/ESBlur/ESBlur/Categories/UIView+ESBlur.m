@@ -1,17 +1,22 @@
 //
-//  UIView+Blur.m
+//  UIView+ESBlur.m
 //
 //  Created by Ezequiel Scaruli on 4/9/15.
 //
 
-#import "UIView+Blur.h"
+#import "UIView+ESBlur.h"
 #import "UIImageEffects.h"
 
 
 static CGFloat const UIViewBlurRadius = 3.0;
 
 
-@implementation UIView (Blur)
+@implementation UIView (ESBlur)
+
+
+- (UIView *)viewByApplyingBlur {
+    return [self viewByApplyingBlurWithTintColor:nil];
+}
 
 
 - (UIView *)viewByApplyingBlurWithTintColor:(UIColor *)tintColor {
@@ -49,7 +54,8 @@ static CGFloat const UIViewBlurRadius = 3.0;
 
 
 - (UIColor *)defaultBlurTintColor {
-    return [UIColor colorWithWhite:0.0 alpha:0.4];
+    // Black color with a slight opacity.
+    return [UIColor colorWithWhite:0.0 alpha:0.1];
 }
 
 

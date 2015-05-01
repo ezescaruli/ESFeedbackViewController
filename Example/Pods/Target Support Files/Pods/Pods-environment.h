@@ -6,6 +6,12 @@
 // project.
 
 
+// ESBlur
+#define COCOAPODS_POD_AVAILABLE_ESBlur
+#define COCOAPODS_VERSION_MAJOR_ESBlur 0
+#define COCOAPODS_VERSION_MINOR_ESBlur 1
+#define COCOAPODS_VERSION_PATCH_ESBlur 0
+
 // ESFeedbackViewController
 #define COCOAPODS_POD_AVAILABLE_ESFeedbackViewController
 #define COCOAPODS_VERSION_MAJOR_ESFeedbackViewController 0

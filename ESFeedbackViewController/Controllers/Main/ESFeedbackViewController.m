@@ -5,12 +5,12 @@
 //
 
 #import <StoreKit/StoreKit.h>
+#import <UIView+ESBlur.h>
 
 #import "ESFeedbackViewController.h"
 #import "ESFeedbackPromptViewController.h"
 #import "ESFeedbackNavigationController.h"
 
-#import "UIView+Blur.h"
 #import "UIColor+Hex.h"
 #import "ESFeedbackViewController+Navigation.h"
 #import "ESFeedbackViewController+Keyboard.h"
@@ -265,7 +265,9 @@ static ESFeedbackViewController *_currentInstance;
 
 
 - (void)setupBlurView {
-    self.blurView = [_mainWindow viewByApplyingBlurWithTintColor:nil];
+    UIColor *tintColor = [UIColor colorWithWhite:0.0 alpha:0.4];
+    self.blurView = [_mainWindow viewByApplyingBlurWithTintColor:tintColor];
+    
     self.blurView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.blurView];
     [self setupEdgeConstraintsForView:self.blurView];
