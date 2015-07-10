@@ -340,11 +340,11 @@ static ESFeedbackViewController *_currentInstance;
     NSNumber *appID = @(_appID.integerValue);
     NSDictionary *parameters = @{SKStoreProductParameterITunesItemIdentifier: appID};
     
-    [storeViewController loadProductWithParameters:parameters completionBlock:nil];
+    [storeViewController loadProductWithParameters:parameters completionBlock:^(BOOL result, NSError *error) {
+        UIViewController *rootVC = [UIApplication sharedApplication].delegate.window.rootViewController;
+        [rootVC presentViewController:storeViewController animated:YES completion:nil];
+    }];
     storeViewController.delegate = self;
-    
-    UIViewController *rootVC = [UIApplication sharedApplication].delegate.window.rootViewController;
-    [rootVC presentViewController:storeViewController animated:YES completion:nil];
 }
 
 
