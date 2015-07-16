@@ -42,6 +42,7 @@ static ESFeedbackViewController *_currentInstance;
 @property (nonatomic, weak) IBOutlet UIView *buttonsContainer;
 @property (nonatomic, weak) IBOutlet UIButton *cancelButton;
 @property (nonatomic, weak) IBOutlet UIButton *OKButton;
+@property (nonatomic, weak) IBOutlet UIView *loadingView;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *generalContainerHeightContraint;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *generalContainerCenterContraint;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *navigationContainerBottomContraint;
@@ -49,6 +50,7 @@ static ESFeedbackViewController *_currentInstance;
 
 @property (nonatomic, strong) UIView *blurView;
 @property (nonatomic, strong) ESFeedbackNavigationController *feedbackNavigationController;
+@property (nonatomic, strong) SKStoreProductViewController *storeViewController;
 
 @end
 
@@ -188,6 +190,8 @@ static ESFeedbackViewController *_currentInstance;
 
 
 + (BOOL)shouldShow {
+    return YES;
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     NSInteger launchCount = [userDefaults integerForKey:_appLaunchCountKey];
@@ -261,6 +265,8 @@ static ESFeedbackViewController *_currentInstance;
     [self setupBlurView];
     [self setupCancelButton];
     [self setupOKButton];
+    
+    self.loadingView.hidden = YES;
 }
 
 
@@ -329,22 +335,32 @@ static ESFeedbackViewController *_currentInstance;
 }
 
 
-- (void)goToAppStore {
+- (void)goToAppStoreAndPerformOnCompletion:(void (^)(void))completion {
     if (_appID == nil) {
         // Nothing to do.
         return;
     }
     
-    SKStoreProductViewController *storeViewController = [[SKStoreProductViewController alloc] init];
+    self.storeViewController = [[SKStoreProductViewController alloc] init];
+    self.storeViewController.delegate = self;
     
     NSNumber *appID = @(_appID.integerValue);
     NSDictionary *parameters = @{SKStoreProductParameterITunesItemIdentifier: appID};
     
-    [storeViewController loadProductWithParameters:parameters completionBlock:^(BOOL result, NSError *error) {
+    self.loadingView.hidden = NO;
+    
+    __weak typeof (self) weakSelf = self;
+    
+    [self.storeViewController loadProductWithParameters:parameters completionBlock:^(BOOL result, NSError *error) {
+        weakSelf.loadingView.hidden = YES;
+        
+        if (completion != nil) {
+            completion();
+        }
+        
         UIViewController *rootVC = [UIApplication sharedApplication].delegate.window.rootViewController;
-        [rootVC presentViewController:storeViewController animated:YES completion:nil];
+        [rootVC presentViewController:weakSelf.storeViewController animated:YES completion:nil];
     }];
-    storeViewController.delegate = self;
 }
 
 

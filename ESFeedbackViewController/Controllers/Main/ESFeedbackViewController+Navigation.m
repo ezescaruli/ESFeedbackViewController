@@ -21,7 +21,7 @@ static CGFloat const ESFeedbackFinishPopupHeight = 44.0;
 + (void)clearCurrentInstance;
 - (void)setupWithCurrentPromptAnimated:(BOOL)animated;
 - (void)dismissClearingCurrentInstance:(BOOL)clear;
-- (void)goToAppStore;
+- (void)goToAppStoreAndPerformOnCompletion:(void (^)(void))completion;
 - (void)promptViewController:(ESFeedbackPromptViewController *)promptVC wasDismissedChoosingOK:(BOOL)ok;
 
 @end
@@ -74,8 +74,9 @@ static CGFloat const ESFeedbackFinishPopupHeight = 44.0;
     };
     
     self.feedbackNavigationController.onGoToAppStore = ^{
-        [safeMe dismissClearingCurrentInstance:NO];
-        [safeMe goToAppStore];
+        [safeMe goToAppStoreAndPerformOnCompletion:^{
+            [safeMe dismissClearingCurrentInstance:NO];
+        }];
     };
 }
 
