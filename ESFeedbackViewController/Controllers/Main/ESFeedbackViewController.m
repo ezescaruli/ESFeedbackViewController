@@ -190,8 +190,6 @@ static ESFeedbackViewController *_currentInstance;
 
 
 + (BOOL)shouldShow {
-    return YES;
-    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     NSInteger launchCount = [userDefaults integerForKey:_appLaunchCountKey];
